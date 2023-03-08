@@ -10,9 +10,10 @@
           <p class="card-text"><i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %></p>
           <p class="card-text"><i class="fa-solid fa-euro-sign"></i><%= flat.price_per_night %></p>
         </div>
+        <p class="card-text fs-6 my-2">Added <%= time_ago_in_words(flat.updated_at) %> ago</p>
       </div>
       <div class="card-footer">
-        More info
+        <%= link_to 'More info', flat_path(flat), class: 'text-decoration-none' %>
       </div>
     </div>
   <% end %>

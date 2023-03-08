@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'flats#index'
-  resources :flats, only: %i[index]
+  resources :flats, only: %i[index show]
 end

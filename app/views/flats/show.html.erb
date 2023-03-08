@@ -1,0 +1,18 @@
+<div class="d-flex flex-column gap-3">
+  <div class="bg-light p-3 shadow-sm">
+    <h2 class="fs-2"><%= @flat.name %></h2>
+    <p><%= @flat.address %></p>
+  </div>
+  <div class="bg-light p-3 shadow-sm">
+    <h2 class="fs-4">A bit more about this flat...</h2>
+    <p><%= @flat.description %></p>
+  </div>
+  <div class="bg-light p-3 shadow-sm">
+    <h2 class="fs-4">Details</h2>
+    <div class="d-flex gap-3">
+      <p class="card-text"><i class="fa-solid fa-user-group"></i><%= @flat.number_of_guests %></p>
+      <p class="card-text"><i class="fa-solid fa-euro-sign"></i><%= @flat.price_per_night %></p>
+    </div>
+  </div>
+  <%= link_to "Back", flats_path, class: 'btn btn-outline-primary' %>
+</div>
