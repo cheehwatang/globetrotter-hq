@@ -1,6 +1,10 @@
 class FlatsController < ApplicationController
   def index
-    @flats = Flat.all.order(updated_at: :DESC)
+    @query = params[:query]
+    @flats = Flat.order(updated_at: :DESC)
+    if @query
+      @flats = Flat.where("name LIKE '%#{@query}%'").order(updated_at: :DESC)
+    end
   end
 
   def show
@@ -46,4 +50,9 @@ class FlatsController < ApplicationController
   def flat_params
     params.require(:flat).permit(:name, :address, :description, :picture_url, :price_per_night, :number_of_guests)
   end
+
+  # def search_params
+  #   raise
+  #   params.require(:search).permit(:term)
+  # end
 end
