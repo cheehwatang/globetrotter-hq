@@ -1,3 +1,12 @@
+<% if alert %>
+  <div class="alert alert-info d-flex justify-content-between align-items-center">
+    <%= alert %>
+    <a class="link-secondary" data-dismiss="alert" onclick="this.parentElement.classList.add('d-none');">
+      <i class="fa-sharp fa-solid fa-xmark"></i>
+    </a>
+  </div>
+<% end %>
+
 <h1 class="mb-4">All our Flats (<%= @flats.length %>)</h1>
 
 <div class="cards d-flex flex-wrap gap-5">
