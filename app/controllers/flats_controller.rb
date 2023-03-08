@@ -20,6 +20,20 @@ class FlatsController < ApplicationController
     end
   end
 
+  def edit
+    @flat = Flat.find(params[:id])
+  end
+
+  def update
+    @flat = Flat.find(params[:id])
+    @flat.update(flat_params)
+    if @flat.save
+      redirect_to flat_path(@flat), alert: "Flat was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def flat_params

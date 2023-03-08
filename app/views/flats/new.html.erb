@@ -1,9 +1,3 @@
 <h1 class="mb-4">New Flat</h1>
-<%= simple_form_for(@flat) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :price_per_night, as: :integer %>
-  <%= f.input :number_of_guests, as: :integer %>
-  <%= f.submit "Add flat", class: "btn btn-outline-primary" %>
-<% end %>
+
+<%= render partial: 'form', flat: @flat %>

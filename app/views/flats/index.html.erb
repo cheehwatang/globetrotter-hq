@@ -12,7 +12,7 @@
 <div class="cards d-flex flex-wrap gap-5">
   <% @flats.each do |flat| %>
     <div class="card flat-card" style="width: 20rem;">
-      <div class="card-body">
+      <div class="card-body bg-light">
         <h5 class="card-title fs-3"><%= flat.name %></h5>
         <p class="card-text fs-5"><%= flat.address %></p>
         <div class="d-flex gap-2">
@@ -21,8 +21,9 @@
         </div>
         <p class="card-text fs-6 my-2">Added <%= time_ago_in_words(flat.updated_at) %> ago</p>
       </div>
-      <div class="card-footer">
-        <%= link_to 'More info', flat_path(flat), class: 'text-decoration-none' %>
+      <div class="card-footer d-flex gap-3 bg-white">
+        <%= link_to 'More info', flat_path(flat), class: 'text-primary text-decoration-none' %>
+        <%= link_to 'Edit', edit_flat_path(flat), class: 'text-warning text-decoration-none' %>
       </div>
     </div>
   <% end %>
