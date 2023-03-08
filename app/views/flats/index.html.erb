@@ -24,6 +24,10 @@
       <div class="card-footer d-flex gap-3 bg-white">
         <%= link_to 'More info', flat_path(flat), class: 'text-primary text-decoration-none' %>
         <%= link_to 'Edit', edit_flat_path(flat), class: 'text-warning text-decoration-none' %>
+        <%= link_to 'Remove', flat_path(flat),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: 'text-danger text-decoration-none'
+        %>
       </div>
     </div>
   <% end %>
