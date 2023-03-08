@@ -21,7 +21,13 @@
     </div>
   <% end %>
 
-  <h1 class="mb-4">All our Flats (<%= @flats.length %>)</h1>
+  <h1 class="mb-4">All our Flats</h1>
+
+  <% if @query %>
+    <p class="fs-5">You searched for <strong><%= @query %></strong>. We found <%= @flats.count %> flats out of our <%= Flat.count %> flats on our website.</p>
+  <% else %>
+    <p class="fs-5">All <%= Flat.count %> flats on our website.</p>
+  <% end %>
 
   <div class="cards d-flex flex-wrap gap-5">
     <% @flats.each do |flat| %>
