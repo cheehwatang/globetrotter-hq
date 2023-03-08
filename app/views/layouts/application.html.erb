@@ -13,6 +13,12 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg bg-light border border-bottom-2 px-4">
+      <div class="container-fluid">
+        <%= link_to 'Simple Airbnb', root_path, class: 'navbar-brand text-decoration-none fs-5 text-dark' %>
+        <%#= link_to 'Add Flat', new_article_path, class: 'text-decoration-none fs-6 text-secondary' %>
+      </div>
+    </nav>
     <div class="container py-5 mx-5">
       <%= yield %>
     </div>
