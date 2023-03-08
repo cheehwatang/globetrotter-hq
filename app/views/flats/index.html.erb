@@ -1,0 +1,19 @@
+<h1 class="mb-4">All our Flats (<%= @flats.length %>)</h1>
+
+<div class="cards d-flex flex-wrap gap-5">
+  <% @flats.each do |flat| %>
+    <div class="card flat-card" style="width: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title fs-3"><%= flat.name %></h5>
+        <p class="card-text fs-5"><%= flat.address %></p>
+        <div class="d-flex gap-2">
+          <p class="card-text"><i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %></p>
+          <p class="card-text"><i class="fa-solid fa-euro-sign"></i><%= flat.price_per_night %></p>
+        </div>
+      </div>
+      <div class="card-footer">
+        More info
+      </div>
+    </div>
+  <% end %>
+</div>
