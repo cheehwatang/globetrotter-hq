@@ -10,16 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_08_131910) do
-  create_table "flats", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "address", null: false
-    t.text "description", null: false
-    t.integer "price_per_night", null: false
-    t.integer "number_of_guests", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "picture_url", null: false
-  end
+ActiveRecord::Schema[7.0].define(version: 0) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
 end
