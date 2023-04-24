@@ -54,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_113000) do
     t.date "dob", null: false
     t.integer "gender", null: false
     t.string "country", null: false
+    t.integer "role", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

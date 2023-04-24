@@ -21,6 +21,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.date :dob, null: false
       t.integer :gender, null: false
       t.string :country, null: false
+      t.integer :role, null: false
 
 
       ## Trackable
