@@ -49,6 +49,9 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 gem "cloudinary"
 
+# User Devise for user model and login signout functionalities
+gem "devise"
+
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
