@@ -10,6 +10,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  # Devise test helpers
+  include Warden::Test::Helpers
+  Warden.test_mode!
 end
 
 # Folder path for screenshots
