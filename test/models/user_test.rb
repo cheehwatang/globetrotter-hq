@@ -102,4 +102,23 @@ class UserTest < ActiveSupport::TestCase
     user.valid?
     assert_not user.errors[:lastname].empty?
   end
+
+  # Tests for dob
+  test "valid if dob is present" do
+    user = User.new(dob: "2000-1-31")
+    user.valid?
+    assert_empty user.errors[:dob]
+  end
+
+  test "invalid if dob is empty" do
+    user = User.new
+    user.valid?
+    assert_not user.errors[:dob].empty?
+  end
+
+  test "invalid if dob is not correctly formatted" do
+    user = User.new(dob: "2000-31-1")
+    user.valid?
+    assert_not user.errors[:dob].empty?
+  end
 end
