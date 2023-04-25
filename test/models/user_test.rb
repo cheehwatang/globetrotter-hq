@@ -20,6 +20,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.errors[:email].empty?
   end
 
+  test "email should be unique" do
+    create(:user)
+    user = build(:user)
+    user.valid?
+    assert_not user.errors[:email].empty?
+  end
+
   # Tests for password
   test "invalid if password is empty" do
     user = User.new
