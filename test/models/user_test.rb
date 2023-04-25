@@ -1,6 +1,12 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
+  # Test for user factory
+  test "valid user" do
+    user = build(:user)
+    assert user.valid?
+  end
+  
   # Tests for email
   test "invalid if email is empty" do
     user = User.new
