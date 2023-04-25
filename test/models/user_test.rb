@@ -89,4 +89,17 @@ class UserTest < ActiveSupport::TestCase
     user.valid?
     assert_not user.errors[:firstname].empty?
   end
+
+  # Tests for lastname
+  test "valid if lastname is present" do
+    user = User.new(lastname: "Doe")
+    user.valid?
+    assert_empty user.errors[:lastname]
+  end
+
+  test "invalid if lastname is empty" do
+    user = User.new
+    user.valid?
+    assert_not user.errors[:lastname].empty?
+  end
 end
