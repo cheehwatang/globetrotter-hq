@@ -72,7 +72,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "username should be unique" do
     create(:user)
-    user = build(:user, email: "test@example.com")
+    user = build(:user)
     user.valid?
     assert_not user.errors[:username].empty?
   end
