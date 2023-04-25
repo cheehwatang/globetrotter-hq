@@ -43,4 +43,17 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(password: "password")
     assert_not_equal "password", user.encrypted_password
   end
+
+  # Tests for username
+  test "valid if username is present" do
+    user = User.new(username: "username")
+    user.valid?
+    assert_empty user.errors[:username]
+  end
+  
+  test "invalid if username is empty" do
+    user = User.new
+    user.valid?
+    assert_not user.errors[:username].empty?
+  end
 end
