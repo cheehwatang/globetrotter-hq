@@ -156,4 +156,26 @@ class UserTest < ActiveSupport::TestCase
     user.valid?
     assert_not user.errors[:country].empty?
   end
+
+  # Tests for role
+  test "valid user if role is 'user', 'owner' or 'admin'" do
+    roles = %w[user owner admin]
+    roles.each do |role|
+      user = User.new(role:)
+      user.valid?
+      assert_empty user.errors[:role]
+    end
+  end
+
+  test "invalid user if role is invalid" do
+    assert_raises(ArgumentError) do
+      User.new(role: "invalid")
+    end
+  end
+
+  test "invalid user if role is empty" do
+    user = User.new
+    user.valid?
+    assert_not user.errors[:role].empty?
+  end
 end
