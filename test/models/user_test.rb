@@ -126,14 +126,14 @@ class UserTest < ActiveSupport::TestCase
   test "valid user if gender is 'female', 'male', 'other' or 'prefer_not_to_say" do
     genders = %w[female male other prefer_not_to_say]
     genders.each do |gender|
-      user = User.new(gender: gender)
+      user = User.new(gender:)
       user.valid?
       assert_empty user.errors[:gender]
     end
   end
 
   test "invalid user if gender is invalid" do
-    assert_raises(ArgumentError) do
+    assert_raises ArgumentError do
       User.new(gender: "invalid")
     end
   end
@@ -168,7 +168,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "invalid user if role is invalid" do
-    assert_raises(ArgumentError) do
+    assert_raises ArgumentError do
       User.new(role: "invalid")
     end
   end

@@ -8,6 +8,6 @@ FactoryBot.define do
     dob { Date.new(2000, 1, 31) }
     gender { "female" }
     country { "SGP" }
-    role { 0 }
+    role { "user" }
   end
 end
