@@ -143,4 +143,17 @@ class UserTest < ActiveSupport::TestCase
     user.valid?
     assert_not user.errors[:gender].empty?
   end
+
+  # Tests for country
+  test "valid user if country is present" do
+    user = User.new(country: "SGP")
+    user.valid?
+    assert_empty user.errors[:country]
+  end
+
+  test "invalid user if country is empty" do
+    user = User.new
+    user.valid?
+    assert_not user.errors[:country].empty?
+  end
 end

@@ -7,7 +7,7 @@ FactoryBot.define do
     lastname { "Doe" }
     dob { Date.new(2000, 1, 31) }
     gender { "female" }
-    country { "SG" }
+    country { "SGP" }
     role { 0 }
   end
 end
